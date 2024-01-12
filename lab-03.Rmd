@@ -1,5 +1,4 @@
 # Chi Zhang
-### 07/15/2021
 # Distances and the Border Zone
 
 ```{r setup, include=FALSE}
@@ -18,6 +17,8 @@ library(rnaturalearthdata)
 library(gghighlight)
 library(ggrepel)
 library(knitr)
+library(ggspatial)
+
 
 ```
 
@@ -251,7 +252,7 @@ knitr::kable(stat_zone,
 
 
 big_city_national = danger_zone %>%
-  slice_max(population, n = 10)
+  slice_max(population, n = 10) 
 
 bigcitynational = big_city_national %>%
   select(id) %>%
@@ -280,7 +281,24 @@ ggplot() +
        x = "Longitude", 
        y = "Latitude",
        caption = "based on https://simplemaps.com/data/us-cities") +
+  
+  annotation_scale(
+    bar_cols = c("grey60", "white"),
+    text_family = "ArcherPro Book") +
+  
+  annotation_north_arrow(
+    location = "bl", which_north = "true",
+    pad_x = unit(0.4, "in"), pad_y = unit(0.4, "in"),
+    style = ggspatial::north_arrow_nautical(
+      fill = c("grey40", "white"),
+      line_col = "grey20",
+      text_family = "ArcherPro Book"
+    )
+  ) +
   theme_gray()
+
+
+
 
 
 ```
