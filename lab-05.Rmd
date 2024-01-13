@@ -1,5 +1,5 @@
 # Chi Zhang
-### 07/29/2021
+
 # Raster&Remote Sensing
 
 ```{r setup, include=FALSE}

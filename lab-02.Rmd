@@ -1,5 +1,5 @@
 # Chi Zhang
-### 07/09/2021
+
 # COVID-19 Pandemic
 
 ```{r setup, include=FALSE}
