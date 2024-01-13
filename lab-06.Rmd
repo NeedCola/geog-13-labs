@@ -1,5 +1,5 @@
 # Chi Zhang
-### 07/30/2021
+
 # Raster&Remote Sensing
 
 ```{r setup, include=FALSE}
@@ -109,7 +109,7 @@ The map looks accurate with all provided data.
 ```{r}
 buildings = extract(flood, poly)
 
-sum(!is.na(buildings))
+#exsum(!is.na(buildings))
 
 r_buildings = poly %>%
   mutate(flooded = buildings)
